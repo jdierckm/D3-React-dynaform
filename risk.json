@@ -1,0 +1,54 @@
+{ "name" : "Risk",
+   "children" : [
+     {"name":"Financial",
+	  "children":[
+	  {"name":"Capital",
+	    "children" : [
+		{"name": "Hardware", "questions" : [{"type":"text", "caption":"What?","ref":"whatHW"},{"type":"text","caption":"How Much?","ref":"howMuchHW"},{"type":"text","caption":"Non Standard?","placeholder":"Y/N","ref":"nonStanHW"}]},
+		{"name": "Software", "questions" : [{"type":"text", "caption":"What?","ref":"whatSW"},{"type":"text", "caption":"Vendor Lock-In?", "placeholder": "Y/N", "ref":"vendorLockSW"},{"type":"text","caption":"Non Standard?","placeholder":"Y/N","ref":"nonStanSW"}]}
+		]
+	  },
+	  {"name": "People", "questions" : [{"type":"text", "caption":"How Many?","ref":"numPeople"},{"type":"text", "caption":"Impacted Organizations?","ref":"impactedOrgs"}]}
+	  ],
+	  "questions" : [{"type": "text","caption": "Total $ if known", "ref": "totalCost"}, {"type": "radio","caption": "Breakout", "ref": "costBreakout", "options": [{"value": "b1", "label" : "Breakout One"},{"value":"b2","label":"Breakout Two"}]},{"type": "checkbox","caption": "Which Apply", "ref": "costChecks", "options": [{"value": "c1", "label" : "Option One"},{"value":"c2","label":"Option Two"}]}]
+	 },
+	 {"name": "Missed Deadline",
+	   "children" : [
+	   {"name" : "New Technology", "questions" : [{"type":"text","caption":"Non Standard?","placeholder":"Y/N","ref":"nonStanTech"},{"type":"text","caption":"Do We Have the Skills?","placeholder":"Y/N","ref":"techSkills"}]},
+	   {"name" : "New Problem", "children" : [{"name": "Custom Software"}]},
+	   {"name" : "Large Project", "children": [{"name": "More to go Wrong"}],
+	   "questions" : [{"type":"text","caption":"Number of Requirements","ref":"numRequirements"},{"type":"number","caption":"Estimated Project Duration","ref":"duration", "placeholder" : "(months)"}]},
+       {"name" : "Unclear Requirements", "questions" : [{"type":"number","caption":"Degree of uncertainty in requirements","ref":"reqUncertainty"}]}	     
+	   ],
+	   "questions" : [{"type":"date","caption":"Deadline","ref":"deadline"}]
+	 },
+	 {"name": "Company Risk",
+	  "children" : [
+	  {"name" : "Business Mistakes", "children" : [{"name":"Reputation"}],
+	   "questions" : [{"type":"number","caption":"$ Impact","ref":"mistakeCost"},{"type":"text","caption":"External Customer Impact?","ref":"externalImpact", "placeholder": "Y/N"},{"type":"text","caption":"Migration Plan?","ref":"migrationPlan"},{"type":"text","caption":"Backout Plan","ref":"backoutPlan"}]
+	  }
+	  ]
+	 },
+	 {"name" : "Security",
+	  "children" : [
+	  {"name": "System Breach","questions" : [{"type":"text","caption":"Attack Surface","ref":"attackSurface"}]},
+	  {"name": "NPI Loss", "questions" : [{"type":"text","caption":"Contains Sensitive Data?","ref":"sensitiveData", "placeholder": "Y/N"}]}
+	  ]
+	 },
+	 {"name": "Production Impact",
+	  "children": [
+	  {"name" : "Poor Performance","questions" : [{"type":"text","caption":"Describe Test Plan","ref":"testPlan"}]},
+	  {"name" : "You Are Down", "questions" : [{"type":"text","caption":"Impact?","ref":"outageImpact"},{"type":"text","caption":"Describe Monitoring Approach","ref":"monitoring"},{"type":"text","caption":"Describe Disaster Recovery Plan","ref":"DRPlan"}]},
+	  {"name" : "You Brought Others Down", "questions": [{"type":"text","caption":"Integration Points","ref":"integrations"}]}
+	  ]
+	 },
+	 {"name": "Technical Debt",
+	  "children" : [
+	  {"name": "Maintenance", "questions":[{"type":"text","caption":"Expected System Lifetime","ref":"expectedLife", "placeholder" : "(months)"}]},
+	  {"name" : "Hard to find Skill Sets", "children" : [
+			  {"name" : "Software Rot", "children" : [{"name" : "Another Replacement Project"}]}
+		]}
+	  ]
+	 }
+	]
+}
